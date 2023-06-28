@@ -1,9 +1,10 @@
-import React from 'react';
+import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 import Home from "./component/home";
 import Campus from "./component/campus";
-import Student from "./component/student"
+import Student from "./component/student";
+import AddCampus from "./component/addCampus";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/Campus/*" element={<Campus />} />
+          <Route path="/Campus/addCampus" element={<AddCampus />} />
           <Route path="/Student/*" element={<Student />} />
         </Routes>
       </div>
