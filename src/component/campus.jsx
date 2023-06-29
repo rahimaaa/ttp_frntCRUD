@@ -13,7 +13,12 @@ const Campus = () => {
       ) : (
         <ul>{listItems(campuses)}</ul>
       )}
-      <Link to="/Campus/AddCampus">Add New Campus</Link>
+      <div>
+        <Link to="/Campus/AddCampus">Add New Campus</Link>
+      </div>
+      <div>
+        <Link to="/Campus/1">View Campus 1</Link>
+      </div>
     </div>
   );
 };
