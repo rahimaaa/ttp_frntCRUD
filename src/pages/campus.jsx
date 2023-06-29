@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import listItems from "./listItems";
+import listItems from "../component/listItems";
 
 const Campus = () => {
   const campuses = [];
