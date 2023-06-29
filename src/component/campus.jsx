@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import listItems from "./listItems";
 
 const Campus = () => {
   const campuses = [];
@@ -10,11 +11,7 @@ const Campus = () => {
       {campuses.length === 0 ? (
         <p>No campuses found.</p>
       ) : (
-        <ul>
-          {campuses.map((campus) => (
-            <li></li>
-          ))}
-        </ul>
+        <ul>{listItems(campuses)}</ul>
       )}
       <Link to="/Campus/AddCampus">Add New Campus</Link>
     </div>
