@@ -5,8 +5,9 @@ import Home from "./pages/home";
 import Campus from "./pages/campus";
 import Student from "./pages/student";
 import AddCampus from "./pages/addCampus";
-import SingleCampus from "./pages/SingleCampus";
 import AddStudent from "./pages/addStudent";
+import SingleCampus from "./pages/SingleCampus";
+import SingleStudent from "./pages/SingleStudent";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
           <Route path="/Student/*" element={<Student />} />
           <Route path="/Student/addStudent" element={<AddStudent />} />
           <Route path="/Campus/:id" element={<SingleCampus />} />
+          <Route path="/Student/:id" element={<SingleStudent />} />
         </Routes>
       </div>
     </Router>
