@@ -5,6 +5,7 @@ import Home from "./component/home";
 import Campus from "./component/campus";
 import Student from "./component/student";
 import AddCampus from "./component/addCampus";
+import SingleCampus from "./component/SingleCampus";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           <Route path="/Campus/*" element={<Campus />} />
           <Route path="/Campus/addCampus" element={<AddCampus />} />
           <Route path="/Student/*" element={<Student />} />
+          <Route path="/Campus/:id" element={<SingleCampus />} />
         </Routes>
       </div>
     </Router>
