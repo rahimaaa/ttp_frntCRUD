@@ -4,12 +4,29 @@ import { Link } from "react-router-dom";
 const addCampus = () => {
   return (
     <div>
-      <h1>Add Campuses Page</h1>
+      <h1>Add Campus Page</h1>
+      
       <label>
-        campus name:
+        Name:
         <input type="text" />
-        <input type="submit" />
+        </label>
+        <label>
+        image:
+        <input type="URL" />
       </label>
+      <label>
+        Description:
+        <input type="text" />
+        </label>
+        <label>
+        email:
+        <input type="text" />
+        </label>
+      <label>
+        gpa:
+        <input type="number" />
+      </label>
+       <button>Submit</button>
     </div>
   );
 };

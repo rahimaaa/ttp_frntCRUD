@@ -4,11 +4,28 @@ function addStudent() {
   return (
     <div>
       <h1>Add student Page</h1>
+      
       <label>
-        student name:
+        Firstname:
         <input type="text" />
-        <input type="submit" />
+        </label>
+        <label>
+        Lastname:
+        <input type="text" />
+        </label>
+        <label>
+        email:
+        <input type="text" />
+        </label>
+        <label>
+        image:
+        <input type="URL" />
       </label>
+      <label>
+        gpa:
+        <input type="number" />
+      </label>
+       <button>Submit</button>
     </div>
   );
 }
