@@ -1,17 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import listItems from "../component/listItems";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchAllStudents } from "../redux/redux-students/students.action";
 
-const student = (props) => {
-  const student = [];
+const Student = () => {
+  const allStudents = useSelector((state) => state.students.students);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchAllStudents());
+  }, [dispatch]);
 
   return (
     <div>
-      <h1>All Student</h1>
-      {student.length === 0 ? (
-        <p>No student found.</p>
+      <h1>All Students</h1>
+      {allStudents.length === 0 ? (
+        <p>No students found.</p>
       ) : (
-        <ul>{listItems(student)}</ul>
+        <ul>{listItems(allStudents)}</ul>
       )}
       <div>
         <Link to="/Student/AddStudent">Add New Student</Link>
@@ -23,4 +30,4 @@ const student = (props) => {
   );
 };
 
-export default student;
+export default Student;
