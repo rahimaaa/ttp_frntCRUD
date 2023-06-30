@@ -22,10 +22,10 @@ const addCampus = () => {
         email:
         <input type="text" />
         </label>
-      <label>
-        gpa:
-        <input type="number" />
-      </label>
+        <label>
+        address:
+        <input type="text" />
+        </label>
        <button>Submit</button>
     </div>
   );
