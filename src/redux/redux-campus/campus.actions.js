@@ -10,7 +10,7 @@ export const DELETE_CAMPUS_SUCCESS = 'DELETE_CAMPUS_SUCCESS';
 export const fetchAllCampuses = () => {
   return async (dispatch) => {
     try {
-      const response = await axios.get('/api/campuses');
+      const response = await axios.get('/api/campus');
       dispatch(fetchAllCampusesSuccess(response.data));
     } catch (error) {
       console.error(error);
@@ -21,7 +21,7 @@ export const fetchAllCampuses = () => {
 export const createCampus = (campusData) => {
   return async (dispatch) => {
     try {
-      const response = await axios.post('/api/campuses', campusData);
+      const response = await axios.post('/api/campus', campusData);
       dispatch(createCampusSuccess(response.data));
     } catch (error) {
       console.error(error);
@@ -32,7 +32,7 @@ export const createCampus = (campusData) => {
 export const updateCampus = (campusId, updatedData) => {
   return async (dispatch) => {
     try {
-      const response = await axios.put(`/api/campuses/${campusId}`, updatedData);
+      const response = await axios.put(`/api/campus/${campusId}`, updatedData);
       dispatch(updateCampusSuccess(response.data));
     } catch (error) {
       console.error(error);

@@ -1,6 +1,12 @@
 const initialState = {
     campuses: [],
   };
+
+export const FETCH_ALL_CAMPUSES_SUCCESS = 'FETCH_ALL_CAMPUSES_SUCCESS';
+export const CREATE_CAMPUS_SUCCESS = 'CREATE_CAMPUS_SUCCESS';
+export const UPDATE_CAMPUS_SUCCESS = 'UPDATE_CAMPUS_SUCCESS';
+export const DELETE_CAMPUS_SUCCESS = 'DELETE_CAMPUS_SUCCESS';
+
   
   const campusReducer = (state = initialState, action) => {
     switch (action.type) {

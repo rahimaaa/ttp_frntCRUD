@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import studentReducer from './studentReducer';
-import campusReducer from './campusReducer';
+import studentReducer from './redux-students/students.reducer';
+import campusReducer from './redux-campus/campus.reducer';
 
 const rootReducer = combineReducers({
   students: studentReducer,
