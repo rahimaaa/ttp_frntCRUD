@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import listItems from "./listItems";
+import listItems from "../component/listItems";
 
 const Campus = () => {
   const campuses = [];
@@ -13,7 +13,12 @@ const Campus = () => {
       ) : (
         <ul>{listItems(campuses)}</ul>
       )}
-      <Link to="/Campus/AddCampus">Add New Campus</Link>
+      <div>
+        <Link to="/Campus/AddCampus">Add New Campus</Link>
+      </div>
+      <div>
+        <Link to="/Campus/1">View Campus 1</Link>
+      </div>
     </div>
   );
 };
