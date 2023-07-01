@@ -1,5 +1,11 @@
 import axios from 'axios';
 
+const api = axios.create({
+  baseURL: 'hhttp://localhost:8080/api/campus', 
+  
+});
+
+
 // Action Types
 export const FETCH_ALL_CAMPUSES_SUCCESS = 'FETCH_ALL_CAMPUSES_SUCCESS';
 export const CREATE_CAMPUS_SUCCESS = 'CREATE_CAMPUS_SUCCESS';
@@ -17,6 +23,7 @@ export const fetchAllCampuses = () => {
     }
   };
 };
+
 
 export const createCampus = (campusData) => {
   return async (dispatch) => {
