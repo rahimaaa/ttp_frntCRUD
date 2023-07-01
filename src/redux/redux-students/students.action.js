@@ -1,5 +1,10 @@
 import axios from 'axios';
 
+const api = axios.create({
+  baseURL: 'hhttp://localhost:8080/api/students', // Replace with your API endpoint
+  // Other configuration options...
+});
+
 export const createStudent = (studentData) => {
     return async (dispatch) => {
       // Perform asynchronous operations (e.g., API call)
