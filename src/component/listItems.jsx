@@ -1,6 +1,6 @@
 import React from "react";
 
-function listItems(props) {
+function ListItems(props) {
   return props.list ? (
     props.list.map((item) => {
       return (
@@ -14,4 +14,4 @@ function listItems(props) {
   );
 }
 
-export default listItems;
+export default ListItems;

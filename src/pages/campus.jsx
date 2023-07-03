@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import listItems from "../component/listItems";
+import ListItems from "../component/ListItems";
 
 const Campus = () => {
+
   const campuses = [];
 
   return (
@@ -11,7 +12,7 @@ const Campus = () => {
       {campuses.length === 0 ? (
         <p>No campuses found.</p>
       ) : (
-        <ul>{listItems(campuses)}</ul>
+        <ul >{ListItems(campuses)}</ul>
       )}
       <div>
         <Link to="/Campus/AddCampus">Add New Campus</Link>
