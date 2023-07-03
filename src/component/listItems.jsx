@@ -5,7 +5,7 @@ function listItems(props) {
     props.list.map((item) => {
       return (
         <div key={item.id}>
-          <h1>{item.type}</h1>
+          <h1>{`${item.first_name} ${item.last_name}`}</h1>
         </div>
       );
     })
