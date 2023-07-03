@@ -18,7 +18,7 @@ const Student = () => {
       {allStudents.length === 0 ? (
         <p>No students found.</p>
       ) : (
-        <ul>{listItems(allStudents)}</ul>
+        <ul>{listItems({ list: allStudents })}</ul>
       )}
       <div>
         <Link to="/Student/AddStudent">Add New Student</Link>
