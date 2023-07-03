@@ -1,5 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import "./App.css"
+
 
 import Home from "./pages/home";
 import Campus from "./pages/campus";
@@ -12,17 +14,19 @@ import SingleStudent from "./pages/SingleStudent";
 function App() {
   return (
     <Router>
+      
       <div className="App">
         {/* Navigation */}
-        <nav>
-          <ul>
-            <li>
+        <nav className="nav">
+        <a className = "home">
               <Link to="/">Home</Link>
-            </li>
-            <li>
+            </a>
+          <ul>
+           
+            <li className = "campus">
               <Link to="/Campus">Campus</Link>
             </li>
-            <li>
+            <li className = "student">
               <Link to="/Student">Student</Link>
             </li>
           </ul>

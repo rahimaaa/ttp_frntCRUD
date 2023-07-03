@@ -6,7 +6,7 @@ const SingleStudent = () => {
 
   const student = {
     id: id,
-    name: "Student 1",
+    name: "id",
     campus: {
       id: 1,
       name: "Campus 1",
