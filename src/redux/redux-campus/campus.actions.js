@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'hhttp://localhost:8080/api/campus', 
+  baseURL: 'http://localhost:8080/api', 
   
 });
 
@@ -16,7 +16,7 @@ export const DELETE_CAMPUS_SUCCESS = 'DELETE_CAMPUS_SUCCESS';
 export const fetchAllCampuses = () => {
   return async (dispatch) => {
     try {
-      const response = await axios.get('/api/campus');
+      const response = await axios.get('http://localhost:8080/api/campus');
       dispatch(fetchAllCampusesSuccess(response.data));
     } catch (error) {
       console.error(error);

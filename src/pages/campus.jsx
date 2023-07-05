@@ -1,4 +1,3 @@
-
 import ListItemCampus from "../component/ListItemCampus";
 import { fetchAllCampuses } from "../redux/redux-campus/campus.actions";
 import React, { useEffect } from "react";
