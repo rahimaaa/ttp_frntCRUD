@@ -1,17 +1,27 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://localhost:8080/api/students", // Replace with your API endpoint
+  baseURL: "http://localhost:8080/api", // Replace with your API endpoint
   // Other configuration options...
 });
 
+// export const createStudent = (studentData) => {
+//   return async (dispatch) => {
+//     // Perform asynchronous operations (e.g., API call)
+//     const response = await api.post("/students", studentData);
+
+//     // Dispatch regular actions based on the asynchronous result
+//     dispatch({ type: "CREATE_STUDENT_SUCCESS", payload: response.data });
+//   };
+// };
 export const createStudent = (studentData) => {
   return async (dispatch) => {
-    // Perform asynchronous operations (e.g., API call)
-    const response = await api.post("/students", studentData);
-
-    // Dispatch regular actions based on the asynchronous result
-    dispatch({ type: "CREATE_STUDENT_SUCCESS", payload: response.data });
+    try {
+      const response = await api.post("/AddStudent", studentData);
+      dispatch({ type: "CREATE_STUDENT_SUCCESS", payload: response.data });
+    } catch (error) {
+      console.error(error);
+    }
   };
 };
 
@@ -45,9 +55,7 @@ export const deleteStudent = (studentId) => {
 export const fetchAllStudents = () => {
   return async (dispatch) => {
     try {
-      console.log("FETCH_ALL_STUDENTS_THUNK is firing");
       const response = await axios.get("http://localhost:8080/api/students");
-      console.log("FETCH_ALL_STUDENTS_THUNK completed");
       dispatch(fetchAllStudentsSuccess(response.data));
     } catch (error) {
       console.error(error);
@@ -62,3 +70,23 @@ export const fetchAllStudentsSuccess = (students) => {
     payload: students,
   };
 };
+
+// export const createNewStudent = () => {
+//   return {
+//     type: "CREATE_NEW_STUDENT",
+//   };
+// };
+
+// export const createNewStudentThunk = (formData) => {
+//   return async (dispatch) => {
+//     try {
+//       const createNewStudent = await axios.post(
+//         "http://localhost:8080/api/AddStudent",
+//         formData
+//       );
+//       dispatch(createNewStudent());
+//     } catch (error) {
+//       console.error(error);
+//     }
+//   };
+// };

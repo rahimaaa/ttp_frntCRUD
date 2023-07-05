@@ -19,8 +19,8 @@ const Student = () => {
         <p>No students found.</p>
       ) : (
         <ListItems list={allStudents} />
-      )} 
-      
+      )}
+
       <div>
         <Link to="/Student/AddStudent">Add New Student</Link>
       </div>
