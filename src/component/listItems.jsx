@@ -3,7 +3,9 @@ import { Link } from "react-router-dom";
 
 function ListItems(props) {
   return props.list ? (
-    props.list.map((item) => {
+    <div class = "studentContainer">
+    {props.list.map((item) => {
+
       return (
         <div className="card" key={item.id}>
           <img
@@ -20,11 +22,17 @@ function ListItems(props) {
           </Link>
           <button>Delete</button>
         </div>
+        
       );
-    })
+      
+    })}
+    </div>
+    
   ) : (
     <h1>Loading...</h1>
+    
   );
+  
 }
 
 export default ListItems;

@@ -22,11 +22,10 @@ const Student = () => {
       )}
 
       <div>
-        <Link to="/Student/AddStudent">Add New Student</Link>
+     
+        <Link to="/Student/AddStudent"><button style = {{height:'50px', fontSize:'20px'}}>Add New Student</button></Link>
       </div>
-      <div>
-        <Link to="/Student/1">View Student 1</Link>
-      </div>
+      
     </div>
   );
 };
