@@ -6,7 +6,11 @@ const SingleStudent = () => {
 
   const student = {
     id: id,
-    name: "id",
+    first_name: "first",
+    last_name: "last",
+    email: "email",
+    gpa: 1.0,
+
     campus: {
       id: '1',
       name: "Campus 1",
@@ -22,7 +26,10 @@ const SingleStudent = () => {
       <h1>Single Student View</h1>
       <h2>Student Details</h2>
       <p>Student ID: {student.id}</p>
-      <p>Student Name: {student.name}</p>
+      <p>First Name: {student.first_name}</p>
+      <p>Last Name: {student.last_name}</p>
+      <p>email: {student.email}</p>
+      <p>GPA: {student.gpa}</p>
 
       <h2>Enrolled Campus</h2>
       {student.campus ? (

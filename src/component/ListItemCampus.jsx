@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function ListItems(props) {
+function ListItemCampus(props) {
   return props.list ? (
     <div class = "studentContainer">
     {props.list.map((item) => {
@@ -13,12 +13,12 @@ function ListItems(props) {
             alt="Profile"
           />
           <div className="container">
-            <h4>{`${item.first_name} ${item.last_name}`}</h4>
-            {`${item.email}`}
-            <h4>{`${item.gpa}`}</h4>
+            <h4>{`${item.name} ${item.address}`}</h4>
+            {`${item.description}`}
+            
           </div>
-          <Link to={`/Student/${item.id}`}>
-            <button>View student</button>
+          <Link to={`/Campus/${item.id}`}>
+            <button>View Campus</button>
           </Link>
           <button>Delete</button>
         </div>
@@ -35,4 +35,4 @@ function ListItems(props) {
   
 }
 
-export default ListItems;
+export default ListItemCampus;

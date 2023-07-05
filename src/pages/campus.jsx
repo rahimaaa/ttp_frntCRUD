@@ -1,21 +1,31 @@
-import React from "react";
+
+import ListItemCampus from "../component/ListItemCampus";
+import { fetchAllCampuses } from "../redux/redux-campus/campus.actions";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import ListItems from "../component/ListItems";
+import { useDispatch, useSelector } from "react-redux";
+
+
 
 const Campus = () => {
+  const allCampuses = useSelector((state) => state.campuses.campuses);
+  const dispatch = useDispatch();
 
-  const campuses = [];
-
+  useEffect(() => {
+    dispatch(fetchAllCampuses());
+  }, [dispatch]);
+  console.log(allCampuses);
   return (
     <div>
       <h1>All Campuses</h1>
-      {campuses.length === 0 ? (
-        <p>No campuses found.</p>
+      {allCampuses.length === 0 ? (
+        <p>No Campuses found.</p>
       ) : (
-        <ul >{ListItems(campuses)}</ul>
+        <ListItemCampus list={allCampuses} />
       )}
+
       <div>
-        <Link to="/Campus/AddCampus">Add New Campus</Link>
+        <Link to="/Campus/AddCampus"><button style = {{height:'50px', fontSize:'20px'}}>Add New Campus</button></Link>
       </div>
       <div>
         <Link to="/Campus/1">View Campus 1</Link>
