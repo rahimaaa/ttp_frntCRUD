@@ -65,7 +65,8 @@
 .studentContainer{
  display: flex;
   flex-direction: row; 
-  justify-content:space-between;
+  gap: 10px;
+  
 } 
 
 /* Add rounded corners to the top left and the top right corner of the image */
