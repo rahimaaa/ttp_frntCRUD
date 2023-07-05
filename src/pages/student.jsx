@@ -11,16 +11,16 @@ const Student = () => {
   useEffect(() => {
     dispatch(fetchAllStudents());
   }, [dispatch]);
-console.log(allStudents)
+  console.log(allStudents);
   return (
     <div>
-
       <h1>All Students</h1>
       {allStudents.length === 0 ? (
         <p>No students found.</p>
       ) : (
-        <ListItems list = {allStudents}/>
-      )}
+        <ListItems list={allStudents} />
+      )} 
+      
       <div>
         <Link to="/Student/AddStudent">Add New Student</Link>
       </div>
