@@ -22,10 +22,12 @@ const Student = () => {
       )}
 
       <div>
-     
-        <Link to="/Student/AddStudent"><button style = {{height:'50px', fontSize:'20px'}}>Add New Student</button></Link>
+        <Link to="/Student/AddStudent">
+          <button style={{ height: "50px", fontSize: "20px" }}>
+            Add New Student
+          </button>
+        </Link>
       </div>
-      
     </div>
   );
 };
