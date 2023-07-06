@@ -1,6 +1,9 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { createNewStudentThunk } from "../redux/redux-students/students.action";
 
 function AddStudent() {
+  const dispatch = useDispatch();
   const [state, setState] = useState({
     first_name: "",
     last_name: "",
@@ -19,6 +22,7 @@ function AddStudent() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(state);
+    dispatch(createNewStudentThunk(state));
   };
 
   return (
