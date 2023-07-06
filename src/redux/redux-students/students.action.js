@@ -27,30 +27,6 @@ export const fetchAllStudentsSuccess = (students) => {
   };
 };
 
-export const updateStudent = (studentId, updatedData) => {
-  return async (dispatch) => {
-    // Perform asynchronous operations (e.g., API call)
-    const response = await api.put(`/students/${studentId}`, updatedData);
-
-    // Dispatch regular actions based on the asynchronous result
-    dispatch({ type: "UPDATE_STUDENT_SUCCESS", payload: response.data });
-  };
-};
-
-export const deleteStudent = (studentId) => {
-  return async (dispatch) => {
-    try {
-      // Perform asynchronous operation (e.g., API call)
-      await api.delete(`/students/${studentId}`);
-
-      // Dispatch regular action based on the asynchronous result
-      dispatch({ type: "DELETE_STUDENT_SUCCESS", payload: studentId });
-    } catch (error) {
-      console.error(error);
-    }
-  };
-};
-
 export const createNewStudent = (students) => {
   return {
     type: "CREATE_STUDENT_SUCCESS",
@@ -69,5 +45,35 @@ export const createNewStudentThunk = (studentData) => {
     } catch (error) {
       console.error(error);
     }
+  };
+};
+
+export const deleteStudent = (students) => {
+  return {
+    type: "DELETE_STUDENT_SUCCESS",
+  };
+};
+
+export const deleteStudentThunk = (studentId) => {
+  return async (dispatch) => {
+    try {
+      // Perform asynchronous operation (e.g., API call)
+      await api.delete(`/students/${studentId}`);
+
+      // Dispatch regular action based on the asynchronous result
+      dispatch({ type: "DELETE_STUDENT_SUCCESS", payload: studentId });
+    } catch (error) {
+      console.error(error);
+    }
+  };
+};
+
+export const updateStudent = (studentId, updatedData) => {
+  return async (dispatch) => {
+    // Perform asynchronous operations (e.g., API call)
+    const response = await api.put(`/students/${studentId}`, updatedData);
+
+    // Dispatch regular actions based on the asynchronous result
+    dispatch({ type: "UPDATE_STUDENT_SUCCESS", payload: response.data });
   };
 };

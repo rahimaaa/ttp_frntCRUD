@@ -2,11 +2,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function ListItems(props) {
-  return props.list ? (
-    <div class = "studentContainer">
-    {props.list.map((item) => {
+  const { list, deleteStudent } = props;
 
-      return (
+  const handleDelete = (studentId) => {
+    deleteStudent(studentId);
+  };
+
+  return list ? (
+    <div className="studentContainer">
+      {list.map((item) => (
         <div className="card" key={item.id}>
           <img
             src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
@@ -20,19 +24,13 @@ function ListItems(props) {
           <Link to={`/Student/${item.id}`}>
             <button>View student</button>
           </Link>
-          <button>Delete</button>
+          <button onClick={() => handleDelete(item.id)}>Delete</button>
         </div>
-        
-      );
-      
-    })}
+      ))}
     </div>
-    
   ) : (
     <h1>Loading...</h1>
-    
   );
-  
 }
 
 export default ListItems;
