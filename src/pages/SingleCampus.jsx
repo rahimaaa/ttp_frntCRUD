@@ -1,32 +1,47 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { useParams, Link } from "react-router-dom";
+import { deleteCampus } from "../redux/redux-campus/campus.actions"
+import { useDispatch, useSelector } from "react-redux";
+
 
 const SingleCampus = () => {
   const { id } = useParams();
 
   const campus = {
     id: id,
-    name: "BC",
+    name: id.name,
+    adress: id.address,
+    description: id.description,
     students: [
-      { id: 1, name: "Student 1" },
-      { id: 2, name: "Student 2" },
+      
     ],
   };
+  const dispatch = useDispatch();
 
-  const handleDelete = () => {};
+  // useEffect(() => {
+  //   dispatch(fetchAllStudents());
+  // }, [dispatch]);
+
+  const handleDelete = (e) => {
+    // useEffect(() => {
+    //   dispatch(deleteCampus(e));
+    // }, [dispatch]);
+  //   dispatchEvent(deleteCampus(e));
+  };
 
   return (
     <div>
       <h1>Single Campus View</h1>
-      <h2>Campus Details</h2>
-      <p>
-        Brooklyn College is a public university in Brooklyn in New York City. It
-        is part of the City University of New York system and enrolls over
-        17,000 undergraduate and over 2,800 graduate students on a 35-acre
-        campus as of 2019.
-      </p>
+      <h2>Campus Details</h2> 
+      <img
+            src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+            alt="Profile"
+          />
       <p>Campus ID: {campus.id}</p>
       <p>Campus Name: {campus.name}</p>
+      <p>Address: {campus.address}</p>
+      <p>Description: {campus.description}</p>
+     
 
       <h2>Enrolled Students</h2>
       {campus.students.length === 0 ? (
@@ -42,7 +57,8 @@ const SingleCampus = () => {
       )}
 
       <button onClick={handleDelete}>Delete Campus</button>
-      <Link to={`/Campus/${id}/edit`}>Edit Campus</Link>
+
+      <Link to={`/Campus/${id}/edit`}> <button>Edit Campus</button> </Link>
     </div>
   );
 };

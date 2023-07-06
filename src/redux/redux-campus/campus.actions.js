@@ -28,7 +28,7 @@ export const fetchAllCampuses = () => {
 export const createCampus = (campusData) => {
   return async (dispatch) => {
     try {
-      const response = await axios.post('/api/campus', campusData);
+      const response = await axios.post('http://localhost:8080/api/campus', campusData);
       dispatch(createCampusSuccess(response.data));
     } catch (error) {
       console.error(error);
@@ -39,7 +39,7 @@ export const createCampus = (campusData) => {
 export const updateCampus = (campusId, updatedData) => {
   return async (dispatch) => {
     try {
-      const response = await axios.put(`/api/campus/${campusId}`, updatedData);
+      const response = await axios.put(`http://localhost:8080/api/campus${campusId}`, updatedData);
       dispatch(updateCampusSuccess(response.data));
     } catch (error) {
       console.error(error);
@@ -50,7 +50,7 @@ export const updateCampus = (campusId, updatedData) => {
 export const deleteCampus = (campusId) => {
   return async (dispatch) => {
     try {
-      await axios.delete(`/api/campuses/${campusId}`);
+      await axios.delete(`http://localhost:8080/api/campus${campusId}`);
       dispatch(deleteCampusSuccess(campusId));
     } catch (error) {
       console.error(error);

@@ -13,8 +13,10 @@ function ListItemCampus(props) {
             alt="Profile"
           />
           <div className="container">
-            <h4>{`${item.name} ${item.address}`}</h4>
+            <h4>{`${item.name}`}</h4>
+            <h4>{`${item.address}`}</h4>
             {`${item.description}`}
+
             
           </div>
           <Link to={`/Campus/${item.id}`}>
