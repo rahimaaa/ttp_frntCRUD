@@ -1,25 +1,27 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  fetchStudentById,
+  deleteStudent,
+} from "../redux/redux-students/students.action";
 
 const SingleStudent = () => {
   const { id } = useParams();
+  const student = useSelector((state) => state.students.student);
+  const dispatch = useDispatch();
 
-  const student = {
-    id: id,
-    first_name: "first",
-    last_name: "last",
-    email: "email",
-    gpa: 1.0,
-
-    campus: {
-      id: '1',
-      name: "Campus 1",
-    },
-  };
+  useEffect(() => {
+    dispatch(fetchStudentById(id));
+  }, [dispatch, id]);
 
   const handleDelete = () => {
-    console.log("Deleting student with ID:", id);
+    dispatch(deleteStudent(id));
   };
+
+  if (!student) {
+    return <p>Loading student...</p>;
+  }
 
   return (
     <div>
@@ -28,7 +30,7 @@ const SingleStudent = () => {
       <p>Student ID: {student.id}</p>
       <p>First Name: {student.first_name}</p>
       <p>Last Name: {student.last_name}</p>
-      <p>email: {student.email}</p>
+      <p>Email: {student.email}</p>
       <p>GPA: {student.gpa}</p>
 
       <h2>Enrolled Campus</h2>

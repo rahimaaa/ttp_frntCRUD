@@ -68,6 +68,23 @@ export const deleteStudentThunk = (studentId) => {
   };
 };
 
+export const fetchStudentByIdSuccess = (student) => ({
+  type: "FETCH_STUDENT_BY_ID_SUCCESS",
+  payload: student,
+});
+
+export const fetchStudentById = (studentId) => {
+  return async (dispatch) => {
+    try {
+      const response = await api.get(`/students/${studentId}`);
+      const student = response.data;
+      dispatch(fetchStudentByIdSuccess(student));
+    } catch (error) {
+      console.error(error);
+    }
+  };
+};
+
 export const updateStudent = (studentId, updatedData) => {
   return async (dispatch) => {
     // Perform asynchronous operations (e.g., API call)

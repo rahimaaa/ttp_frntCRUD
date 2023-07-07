@@ -1,8 +1,7 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import { deleteCampus } from "../redux/redux-campus/campus.actions"
+import { deleteCampus } from "../redux/redux-campus/campus.actions";
 import { useDispatch, useSelector } from "react-redux";
-
 
 const SingleCampus = () => {
   const { id } = useParams();
@@ -12,9 +11,7 @@ const SingleCampus = () => {
     name: id.name,
     adress: id.address,
     description: id.description,
-    students: [
-      
-    ],
+    students: [],
   };
   const dispatch = useDispatch();
 
@@ -26,22 +23,21 @@ const SingleCampus = () => {
     // useEffect(() => {
     //   dispatch(deleteCampus(e));
     // }, [dispatch]);
-  //   dispatchEvent(deleteCampus(e));
+    //   dispatchEvent(deleteCampus(e));
   };
 
   return (
     <div>
       <h1>Single Campus View</h1>
-      <h2>Campus Details</h2> 
+      <h2>Campus Details</h2>
       <img
-            src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
-            alt="Profile"
-          />
+        src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+        alt="Profile"
+      />
       <p>Campus ID: {campus.id}</p>
       <p>Campus Name: {campus.name}</p>
       <p>Address: {campus.address}</p>
       <p>Description: {campus.description}</p>
-     
 
       <h2>Enrolled Students</h2>
       {campus.students.length === 0 ? (
@@ -58,7 +54,10 @@ const SingleCampus = () => {
 
       <button onClick={handleDelete}>Delete Campus</button>
 
-      <Link to={`/Campus/${id}/edit`}> <button>Edit Campus</button> </Link>
+      <Link to={`/Campus/${id}/edit`}>
+        {" "}
+        <button>Edit Campus</button>{" "}
+      </Link>
     </div>
   );
 };
