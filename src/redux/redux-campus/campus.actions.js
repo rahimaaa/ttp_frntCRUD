@@ -52,7 +52,7 @@ export const deleteCampus = (campusId) => {
   return async (dispatch) => {
     try {
       await api.delete(`/campus/${campusId}`);
-      dispatch(deleteCampusSuccess(campusId));
+      dispatch({ type: "DELETE_CAMPUS_SUCCESS", payload: campusId });
     } catch (error) {
       console.error(error);
     }
