@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
   fetchAllCampuses,
-  deleteCampus,
+  deleteCampusThunk,
 } from "../redux/redux-campus/campus.actions";
 
 const Campus = () => {
@@ -15,8 +15,8 @@ const Campus = () => {
     dispatch(fetchAllCampuses());
   }, [dispatch]);
 
-  const deleteCampusHandler = (campusId) => {
-    dispatch(deleteCampus(campusId));
+  const deleteCampus = (campusId) => {
+    dispatch(deleteCampusThunk(campusId));
   };
 
   return (
@@ -25,7 +25,7 @@ const Campus = () => {
       {allCampuses.length === 0 ? (
         <p>No Campuses found.</p>
       ) : (
-        <ListItemCampus list={allCampuses} deleteCampus={deleteCampusHandler} />
+        <ListItemCampus list={allCampuses} deleteCampus={deleteCampus} />
       )}
 
       <div>

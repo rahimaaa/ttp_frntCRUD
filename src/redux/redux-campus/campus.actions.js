@@ -21,7 +21,18 @@ export const fetchAllCampuses = () => {
     }
   };
 };
+export const fetchAllCampusesSuccess = (campuses) => {
+  return {
+    type: "FETCH_ALL_CAMPUSES_SUCCESS",
+    payload: campuses,
+  };
+};
 
+export const createNewCampus = (campuses) => {
+  return {
+    type: "CREATE_CAMPUS_SUCCESS",
+  };
+};
 export const createCampus = (campusData) => {
   return async (dispatch) => {
     try {
@@ -47,8 +58,13 @@ export const updateCampus = (campusId, updatedData) => {
     }
   };
 };
+export const deleteCampus = (campuses) => {
+  return {
+    type: "DELETE_CAMPUS_SUCCESS",
+  };
+};
 
-export const deleteCampus = (campusId) => {
+export const deleteCampusThunk = (campusId) => {
   return async (dispatch) => {
     try {
       await api.delete(`/campus/${campusId}`);
@@ -59,23 +75,7 @@ export const deleteCampus = (campusId) => {
   };
 };
 
-// Regular Actions
-export const fetchAllCampusesSuccess = (campuses) => ({
-  type: FETCH_ALL_CAMPUSES_SUCCESS,
-  payload: campuses,
-});
-
-export const createCampusSuccess = (campus) => ({
-  type: CREATE_CAMPUS_SUCCESS,
-  payload: campus,
-});
-
 export const updateCampusSuccess = (campus) => ({
   type: UPDATE_CAMPUS_SUCCESS,
   payload: campus,
-});
-
-export const deleteCampusSuccess = (campusId) => ({
-  type: DELETE_CAMPUS_SUCCESS,
-  payload: campusId,
 });

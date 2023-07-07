@@ -11,7 +11,6 @@ function AddCampus() {
 
   const handleChange = (e) => {
     const value = e.target.value;
-    console.log("hello");
     setState({
       ...state,
       [e.target.name]: value,
